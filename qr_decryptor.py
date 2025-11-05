@@ -72,7 +72,7 @@ def main(filename, password):
     else:
         print("Invalid Password")
 
-print("23BIT055 - 23BIT056")
+print("23BIT055 - 23BIT056 - 23BIT057")
 print("QR Decryptor with Password Protection")
 fname = input("Enter QR Code Filename: ")
 password = input("Enter Password: ")

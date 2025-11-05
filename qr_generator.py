@@ -63,7 +63,7 @@ def qr_generator(plain_txt, filename, password):
     else:
         print("Password Length Error.")
 
-print("23BIT055 - 23BIT056")
+print("23BIT055 - 23BIT056 - 23BIT057")
 print("Password Protected & Encrypted QR Code Generator")
 txt = input("Enter Message: ")
 fname = input("Enter Filename to save QR Code: ")

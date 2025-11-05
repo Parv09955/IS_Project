@@ -42,7 +42,6 @@ def create_letter_matrix(rows, columns, cipher_txt):
 
 def columnar_decryption(cipher_txt):
     plain_txt = ""
-    cipher_txt = cipher_txt[6:]
     a = len(cipher_txt)
     rows = a//5
     if a%5 != 0:
@@ -63,10 +62,11 @@ def columnar_decryption(cipher_txt):
 
 def main(filename, password):
     cipher_txt = decode_qr(filename)
+    plain_txt = columnar_decryption(cipher_txt)
     if len(password) == 6:
-        if password_checker(cipher_txt, password):
-            plain_txt = columnar_decryption(cipher_txt)
-            print("\nMessage: ", plain_txt)
+        if password_checker(plain_txt, password):
+            text = plain_txt[6:]
+            print("\nMessage: ", text)
         else:
             print("Invalid Password")
     else:

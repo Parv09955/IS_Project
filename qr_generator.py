@@ -35,15 +35,15 @@ def columnar_transposition(plain_txt):
 
     return cipher_txt
 
-def password_modification(cipher_txt, password):
+def password_modification(text, password):
     password = password[4] + password[1] + password[3] + password[0] + password[5] + password[2]
-    cipher_txt = password + cipher_txt
-    return cipher_txt
+    text = password + text
+    return text
 
 def qr_generator(plain_txt, filename, password):
-    text = columnar_transposition(plain_txt)
     if len(password) == 6:
-        text = password_modification(text, password)
+        text = password_modification(plain_txt, password)
+        text = columnar_transposition(text)
         if filename[-4:] != ".png":
             filename = filename + ".png"
 

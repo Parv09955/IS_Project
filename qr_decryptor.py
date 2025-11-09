@@ -73,6 +73,11 @@ def main(filename, password):
     key2 = key_generator(key2)
     plain_txt = columnar_decryption(cipher_txt, key2)
     plain_txt = columnar_decryption(plain_txt, key1)
+    while True:
+        if plain_txt[-1] == "~":
+            plain_txt = plain_txt[:-1]
+        else:
+            break
     if len(password) == 8:
         if check_password(plain_txt, password):
             print("Message: " + plain_txt[8:])
